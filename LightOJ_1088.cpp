@@ -10,11 +10,11 @@ ll bs_upper(ll arr[],ll n, ll key){
     while(bi <= en){
         mid = (bi+en)/2;
         if(arr[mid] <= key){
-			      bi = mid + 1;
-	    	}
-		    else{
-			      en = mid - 1;
-	    	}
+		bi = mid + 1;
+	}
+	else{
+		en = mid - 1;
+	}
     }
     return en;
 }
@@ -25,11 +25,11 @@ ll bs_lower(ll arr[],ll n, ll key){
     while(bi <= en){
         mid = (bi+en)/2;
         if(arr[mid] >= key){
-			      en = mid - 1;
-		    }
-		    else{
-			      bi = mid + 1;
-	    	}
+		en = mid - 1;
+	}
+	else{
+		bi = mid + 1;
+	}
     }
     return bi;
 }
@@ -44,9 +44,9 @@ int main(){
         scanf("%lld",&arr[i]);
     }
     
-		printf("Case %d:\n",T);
+    printf("Case %d:\n",T);
     for(int i=0; i<q; i++){
-			  scanf("%lld%lld",&a,&b);
+	scanf("%lld%lld",&a,&b);
         printf("%lld\n", bs_upper(arr,n,b) - bs_lower(arr,n,a) + 1 );
         }
     }  
