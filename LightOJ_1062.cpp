@@ -19,11 +19,10 @@ int main() {
     int t;
     cin >> t;
     long double x,y,c;
-	  for(int T=1; T<=t; T++){
+    for(int T=1; T<=t; T++){
 		cin >> x >> y >> c;
 		long double h1,h2,m,hi=max(x,y),lo=0,d;
-		
-    while(hi-lo > 0.00000000001){   //binary search
+		while(hi-lo > 0.00000000001){   //binary search
 			m = (hi+lo)/2;
 			h1 = sqrt(x*x - m*m);
 			h2 = sqrt(y*y - m*m);
