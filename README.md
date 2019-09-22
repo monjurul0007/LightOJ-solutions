@@ -1,5 +1,5 @@
-<h3>Md. Monjurul Hoque Chowhdury</h3>
-Dept. of CSE, IIUC.<br>
+<b>Md. Monjurul Hoque Chowhdury</b><br>
+Dept. of CSE, IIUC.
 
 linkedin : https://www.linkedin.com/in/monjurul0007/
 
