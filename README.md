@@ -1,4 +1,4 @@
-Md. Monjurul Hoque Chowhdury \n
+<b>Md. Monjurul Hoque Chowhdury</b><br>
 Dept. of CSE, IIUC.
 
 linkedin : https://www.linkedin.com/in/monjurul0007/
