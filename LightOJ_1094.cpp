@@ -22,9 +22,7 @@ vector <pii> adj[30005];
 ll dis[30005],n;
 
 void bfs(int s){
-	for(int i=0; i<n; i++){
-		dis[i] = LLONG_MAX;
-	}
+	mem(dis, -1);
 	queue <pii> q;
 	q.push({0,s});
 	dis[s] = 0;
@@ -34,7 +32,7 @@ void bfs(int s){
 		for(auto i : adj[u]){
 			int v = i.second;
 			int w = i.first;
-			if(dis[u] + w < dis[v]){
+			if(dis[v] == -1){
 				dis[v] = dis[u] + w;
 				q.push({dis[v],v});
 			}
