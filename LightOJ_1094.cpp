@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -20,22 +21,22 @@ typedef pair<int , pii > piii;
 vector <pii> adj[30005];
 ll dis[30005],n;
 
-void dijkstra(int s){
+void bfs(int s){
 	for(int i=0; i<n; i++){
 		dis[i] = LLONG_MAX;
 	}
-	priority_queue <pii, vector<pii> , greater<pii> > pq;
-	pq.push({0,s});
+	queue <pii> q;
+	q.push({0,s});
 	dis[s] = 0;
-	while(!pq.empty()){
-		int u = pq.top().second;
-		pq.pop();
-		for(int i=0; i<adj[u].size(); i++){
-			int v = adj[u][i].second;
-			int w = adj[u][i].first;
+	while(!q.empty()){
+		int u = q.front().second;
+		q.pop();
+		for(auto i : adj[u]){
+			int v = i.second;
+			int w = i.first;
 			if(dis[u] + w < dis[v]){
 				dis[v] = dis[u] + w;
-				pq.push({dis[v],v});
+				q.push({dis[v],v});
 			}
 		}
 	}
@@ -55,7 +56,7 @@ int main(){
 		}
 		
 		ll node = 0,mx = 0;
-		dijkstra(0);
+		bfs(0);
 		for(int i=0; i<n; i++){
 			if(mx < dis[i]){
 				mx = dis[i];
@@ -63,7 +64,7 @@ int main(){
 			}
 		}
 		
-		dijkstra(node);
+		bfs(node);
 		for(int i=0; i<n; i++){
 			if(mx < dis[i]){
 				mx = dis[i];
